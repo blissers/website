@@ -11,11 +11,15 @@
     }
     .buydiv{
       float: left;
-      width: 33%;
+      width: 25%;
       }
       .title {font-size:20px; background:black;}
       .titlediv {position:relative;}
       td, h1{ text-align:center;}
+      .a1:hover {
+          background: white;
+          color: black;
+      }
       .a1 {text-decoration: none; color:white;}
       .a2 {text-decoration: none; color:black;}
       .login {text-align:right;}
@@ -27,6 +31,36 @@
         margin-top: 30px;
       }
       </style>
+      <!-- 푸터 -->
+      <style>
+          #main_footer {
+              padding: 10px;
+              border-top: 3px solid black;
+              text-align: center;
+          }
+      </style>
+
+        <script>
+          function order() {
+            var name = document.getElementById("username").value;
+            var number = document.getElementById("usernum").value;
+            var add = document.getElementById("useradd").value;
+          if(name==""){
+            alert("이름을 입력해주세요");
+          }
+          else if(number==""){
+            alert("연락처를 입력해주세요");
+          }
+          else if(add==""){
+            alert("주소를 입력해주세요");
+          }
+          else{
+            location.href = "home.html";
+            alert("주문완료");
+          }
+          }
+        </script>
+
   </head>
   <body>
      <header>
@@ -57,42 +91,79 @@
 
     <section>
         <div>
-          <form action="" method="post" enctype="multipart/form-data">
             <fieldset>
               <legend><h1>주문정보</h1></legend>
         <div class="buydiv" align="center">
-            <img src="adv1.JPG" width="100" height="100" scrolling="no">
+            <img id="img" src=dimage width="100" height="100" scrolling="no">
+            <script>
+            temp = location.href.split("?");
+            data=temp[1].split(":");
+            name = decodeURI(data[0]);
+            buynum = data[1];
+            dimage = data[2];
+            document.getElementById("clothname").innerHTML = name;
+            document.getElementById("num").innerHTML = "수량 : "+ buynum +"개";
+            document.getElementById("img").src = dimage;
+            </script>
         </div>
         <div class="buydiv" align="center">
-            <br>옷 이름
+            <br><span id="clothname"></span>
+            <script>
+            temp = location.href.split("?");
+            data=temp[1].split(":");
+            name = decodeURI(data[0]);
+            buynum = data[1];
+            dimage = data[2];
+            document.getElementById("clothname").innerHTML = name;
+            document.getElementById("num").innerHTML = "수량 : "+ buynum +"개";
+            document.getElementById("img").src = dimage;
+            </script>
         </div>
         <div class="buydiv" align="center">
-            <br>수량 : 1개
+            <br><span id="num"><span>
+              <script>
+              temp = location.href.split("?");
+              data=temp[1].split(":");
+              name = decodeURI(data[0]);
+              buynum = data[1];
+              dimage = data[2];
+              document.getElementById("clothname").innerHTML = name;
+              document.getElementById("num").innerHTML = "수량 : "+ buynum +"개";
+              document.getElementById("img").src = dimage;
+              </script>
             </div>
+            <div class="buydiv" align="center">
+                <br><span id="sumvalue"><span>
+                  <script>
+                  temp = location.href.split("?");
+                  data=temp[1].split(":");
+                  dvalue = data[3];
+                  document.getElementById("sumvalue").innerHTML ="가격 : "+ dvalue+"원";
+                  </script>
+                </div>
            </fieldset>
            <fieldset>
              <legend><h1>배송지 정보</h1></legend>
               <ul>
                   <li>
-                    이름 :   &nbsp&nbsp&nbsp <input type="text">
+                    이름 :   &nbsp&nbsp&nbsp <input id="username" type="text">
                   </li>
                   <li>
-                    연락처 : &nbsp <input type="tel">
+                    연락처 : &nbsp <input id="usernum" type="tel">
                   </li>
                   <li>
-                    주소 :  &nbsp &nbsp&nbsp <input type="text" size="40">
+                    주소 :  &nbsp &nbsp&nbsp <input id="useradd" type="text" size="40">
                   </li>
                   <li>
-                    메모 :  &nbsp&nbsp<br> <textarea cols="40" rows="3"></textarea>
+                    메모 :  &nbsp&nbsp<br> <textarea id="memo" cols="40" rows="3"></textarea>
                   </li>
               </ul>
             </fieldset>
             <div class="orderdiv">
-            <input type="submit" value="주문하기">
+            <input onclick="order();" type="submit" value="주문하기">
             </div>
-          </form>
         </div>
-
     </section>
+
   </body>
 </html>

@@ -9,16 +9,46 @@
     {
       font-family: 'Nanum Brush Script', cursive;
     }
-      .title {font-size:20px; background:black;}
+      #title {font-size:20px; background:black;}
+      .a1:hover {
+          background: white;
+          color: black;
+      }
       .titlediv {position:relative;}
       td, h1{ text-align:center;}
-      .a1 {text-decoration: none; color:white;}
+      .a1 {text-decoration: none; color:white; background:black;}
       .a2 {text-decoration: none; color:black;}
       .login {text-align:right;}
-      .homeimgdiv {
-        margin-top: 30px;
+      #slide{
+        border: 1px solid #000;
+        border-radius : 10px;
+        box-shoadow: 3px 3px 5px #333;
       }
-      </style>
+      #content{
+        font-size: 12px;
+        margin: 30px 0;
+        text-align : center;
+      }
+   </style>
+   <!-- 푸터 -->
+   <style>
+       #main_footer {
+           padding: 10px;
+           border-top: 3px solid black;
+           text-align: center;
+       }
+   </style>
+
+   <script type="text/javascript">
+    var image1 = new Image();
+    image1.src ="adv1.jpg"
+    var image2 = new Image();
+    image2.src ="adv2.jpg"
+    var image3 = new Image();
+    image3.src ="adv3.jpg"
+    var image4 = new Image();
+    image4.src ="adv4.jpg"
+   </script>
   </head>
   <body>
      <header>
@@ -35,7 +65,7 @@
    </div>
    <br>
    <div class="titlediv">
-    <table class="title" width = "100%" border =1>
+    <table id="title" width = "100%" border =1>
       <tr>
         <td><a class="a1" href="outer.html">Outer</a> </td>
         <td><a class="a1" href="">Top</a> </td>
@@ -44,9 +74,28 @@
         <td><a class="a1" href="">shoes</a> </td>
       </tr>
     </table>
-      <img class="homeimgdiv" name="advertisement" src="adv1.JPG" width="100%" height="500" scrolling="no">
     </div>
-    </header>
+      <div id ="content">
+        <img id="slide" src="adv1.jpg" name="slide" width="80%" height="800"><br/>
+      </div>
 
+      <script type="text/javascript">
+         var step=1;
+         function slideit(){
+           document.images.slide.src=eval("image"+step+".src");
+           if(step<4)
+           step++
+           else
+             step=1;
+             setTimeout("slideit()", 2500);
+         }
+          slideit();
+      </script>
+    </header>
+    <footer id="main_footer">
+        <h3>스트릿 브랜드 홈쇼핑</h3>
+        <address>주소 : 서울 노원구 월계동 광운대</address>
+        <address>전화번호 : 02-442-xxxx </address>
+    </footer>
   </body>
 </html>

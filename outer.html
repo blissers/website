@@ -15,6 +15,10 @@
       .a1 {text-decoration: none; color:white;}
       .a2 {text-decoration: none; color:black;}
       .login {text-align:right;}
+      .a1:hover {
+          background: white;
+          color: black;
+      }
       .clothdiv{
         text-align:center;
         position: absolute;
@@ -30,6 +34,98 @@
          margin-right:auto;
        }
       </style>
+      <!-- 푸터 -->
+      <style>
+          #main_footer {
+              padding: 10px;
+              border-top: 3px solid black;
+              text-align: center;
+          }
+      </style>
+
+      <script type="text/javascript">
+       var image11 = new Image();
+       image11.src ="outer11.jpg"
+       var image12 = new Image();
+       image12.src ="outer12.jpg"
+       var image21 = new Image();
+       image21.src ="outer21.jpg"
+       var image22 = new Image();
+       image22.src ="outer22.jpg"
+       var image31 = new Image();
+       image31.src ="outer31.jpg"
+       var image32 = new Image();
+       image32.src ="outer32.jpg"
+       var image41 = new Image();
+       image41.src ="outer41.jpg"
+       var image42 = new Image();
+       image42.src ="outer42.jpg"
+       var image51 = new Image();
+       image51.src ="outer51.jpg"
+       var image52 = new Image();
+       image52.src ="outer52.jpg"
+       var image61 = new Image();
+       image61.src ="outer61.jpg"
+       var image62 = new Image();
+       image62.src ="outer62.jpg"
+
+      </script>
+
+            <script>
+            function gotoitem(val) {
+              switch(val){
+                case 1:
+                 name ="데일리싱글블레이져[CB28]";
+                 outervalue ="58000";
+                 image1 = "outer11.jpg";
+                 image2 = "outer12.jpg";
+                 image3 = "outer13.jpg";
+                 location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+                case 2:
+                name ="셰퍼드체크패턴테일러더블자켓[CA]";
+                outervalue ="79800";
+                image1 = "outer21.jpg";
+                image2 = "outer22.jpg";
+                image3 = "outer23.jpg";
+                location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+                case 3:
+                name ="8컬러포켓코튼트러커자켓[CA293]";
+                outervalue ="36000";
+                image1 = "outer31.jpg";
+                image2 = "outer32.jpg";
+                image3 = "outer33.jpg";
+                location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+                case 4:
+                name ="오픈니트가디건[CC22]";
+                outervalue ="34000";
+                image1 = "outer41.jpg";
+                image2 = "outer42.jpg";
+                image3 = "outer43.jpg";
+                location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+                case 5:
+                name ="베이직워싱청트러커자켓[CB13]";
+                outervalue ="34000";
+                image1 = "outer51.jpg";
+                image2 = "outer52.jpg";
+                image3 = "outer53.jpg";
+                location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+                case 6:
+                name ="칵테일싱글블레이저(네이비)[CE03]";
+                outervalue ="90000";
+                image1 = "outer61.jpg";
+                image2 = "outer62.jpg";
+                image3 = "outer63.jpg";
+                location.href = "item.html?" + name+ ":" + outervalue +":" + image1 + ":" + image2+ ":" + image3;
+                break;
+              }
+            }
+            </script>
+
   </head>
   <body>
      <header>
@@ -62,49 +158,66 @@
           <div>
             <div class="imgdiv">
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(1);"><img id ="outer1" src="outer11.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-               <a class="a2" href="">야상<br></a>
-               25000 WON
+               <a id ="outer1" class="a2" style="cursor:pointer" onclick="gotoitem(1);">데일리 싱글 블레이져[CB28]<br></a>
+               58000 WON
             </div>
             <div class="imgdiv">
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(2);"><img id ="outer2" src="outer21.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-              <a class="a2" href="">야상<br></a>
-              25000 WON
+              <a id ="outer2" class="a2" style="cursor:pointer" onclick="gotoitem(2);">셰퍼드 체크 패턴 테일러 더블자켓[CA]<br></a>
+              79800 WON
             </div>
             <div class="imgdiv">
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(3);"><img id ="outer3"  src="outer31.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-              <a class="a2" href="">야상<br></a>
-              25000 WON
+              <a id ="outer3"class="a2" style="cursor:pointer" onclick="gotoitem(3);">8컬러 포켓 코튼 트러커 자켓[CA293]<br></a>
+              36000 WON
             </div>
           </div>
           <div>
             <div class="imgdiv">
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(4);"><img id ="outer4" src="outer41.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-               <a class="a2" href="">야상<br></a>
-               25000 WON
+               <a id ="outer4" class="a2" style="cursor:pointer" onclick="gotoitem(4);">오픈 니트 가디건[CC22]<br></a>
+               34000 WON
             </div>
             <div class="imgdiv">
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(5);"><img id ="outer5" src="outer51.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-              <a class="a2" href="">  야상<br></a>
-              25000 WON
+              <a id ="outer5" class="a2" style="cursor:pointer" onclick="gotoitem(5);">  베이직 워싱 청 트러커 자켓[CB13]<br></a>
+              34000 WON
             </div>
             <div class="imgdiv"></a>
               <div>
-                <a href="item.html"><img src="adv1.JPG" width="200" height="300" scrolling="no"></a>
+                <a style="cursor:pointer" onclick="gotoitem(6);"><img id ="outer6" src="outer61.JPG" width="200" height="300" scrolling="no"></a>
               </div>
-              <a class="a2" href="">야상<br></a>
-              25000 WON
+              <a id ="outer6"class="a2" style="cursor:pointer" onclick="gotoitem(6);">칵테일 싱글 블레이저(네이비)[CE03]<br></a>
+              90000 WON
             </div>
-          </div>
+          </div><br><br><br><p></p>
+          <script type="text/javascript">
+             var step=1;
+             function slideit(){
+               document.images.outer1.src=eval("image1"+step+".src");
+               document.images.outer2.src=eval("image2"+step+".src");
+               document.images.outer3.src=eval("image3"+step+".src");
+               document.images.outer4.src=eval("image4"+step+".src");
+               document.images.outer5.src=eval("image5"+step+".src");
+               document.images.outer6.src=eval("image6"+step+".src");
+               if(step<2)
+               step++
+               else
+                 step=1;
+                 setTimeout("slideit()", 2500);
+             }
+              slideit();
+          </script>
     </section>
 
   </body>

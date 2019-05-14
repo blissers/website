@@ -13,6 +13,10 @@
       .titlediv {position:relative;}
       td, h1{ text-align:center;}
       .a1 {text-decoration: none; color:white;}
+      .a1:hover {
+          background: white;
+          color: black;
+      }
       .a2 {text-decoration: none; color:black;}
       .login {text-align:right;}
       .buydiv{
@@ -20,7 +24,45 @@
         width: 50%;
         margin-top:50px;
       }
+      .showbigdiv{
+        width:100%;
+      }
       </style>
+      <!-- 푸터 -->
+      <style>
+          #main_footer {
+              padding: 10px;
+              border-top: 3px solid black;
+              text-align: center;
+          }
+      </style>
+
+      <script>
+      function showBig(val) {
+        var obj = document.getElementById("big");
+        obj.src = val;
+         setTimeout("return()", 5500);
+        }
+      </script>
+
+      <script>
+      function sumvalue() {
+        var num = document.getElementById("buynum");
+        sum = num.value*outervalue;
+        document.getElementById("clothvalue").innerHTML = sum+"원";
+        }
+      </script>
+
+      <script>
+      function buyitem(){
+        var num = document.getElementById("buynum");
+        buynum = num.value;
+        sum = num.value*outervalue;
+      name = document.getElementById("clothname").innerHTML;
+      location.href = "buyitem.html?" + name+ ":" + buynum + ":" + dimage3+":"+sum;
+    }
+      </script>
+
   </head>
   <body>
      <header>
@@ -53,12 +95,33 @@
        <div>
          <div class="buydiv">
            <div align=center>
-             <a href=""><img src="adv1.JPG" width="300" height="400" scrolling="no"></a>
+             <a href=""><img id="big"  width="300" height="400" scrolling="no"></a><br><hr>
+             <img id="small1"  width="130" height="130" onmouseover="showBig(dimage1);">
+             <img id="small2"  width="130" height="130" onmouseover="showBig(dimage2);">
            </div>
          </div>
          <div class="buydiv">
-            옷 이름 <br><hr><br>
-            25000원 <br><br>
+            <p id = "clothname"></p> <hr><br>
+            <p id = "clothvalue"></p> <br>
+            <script>
+            temp = location.href.split("?");
+            data=temp[1].split(":");
+            name = decodeURI(data[0]);
+            outervalue = data[1];
+            dimage1 = data[2];
+            dimage2 = data[3];
+            dimage3 = data[4];
+            var clothname = document.getElementById("clothname");
+            var clothvalue = document.getElementById("clothvalue");
+            var image1 = document.getElementById("big");
+            var image2 = document.getElementById("small1");
+            var image3 = document.getElementById("small2");
+            clothname.textContent = name;
+            clothvalue.textContent = outervalue+"원";
+            image1.src = dimage3;
+            image2.src = dimage1;
+            image3.src = dimage2;
+            </script>
             무료배송<br><br>
             옵션 : &nbsp <select name='op' size='1' class='select'>
           <option value=''>선택하세요</option>
@@ -66,15 +129,18 @@
           <option value='31'>벨트</option>
           <option value='32'>포장</option>
         </select><br><br>
-        수량 : &nbsp<input type="number" id="buynum" name="buynum"
+        수량 : &nbsp<input type="number" id="buynum" onclick="sumvalue();"
               value="1"
               step="1"
               min="1"
               max="10"><br><br>
-            <a class="a2" href="buyitem.html"><button type="submit">구매하기</button>&nbsp&nbsp</a>
+            <a class="a2" style="cursor:pointer" onclick="buyitem();"><button type="submit">구매하기</button>&nbsp&nbsp</a>
               <button type="submit">장바구니담기</button>
          </div>
        </div>
+       <div class="showbigdiv">
+
+     </div>
     </section>
 
   </body>
